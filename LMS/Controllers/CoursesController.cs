@@ -20,6 +20,15 @@ namespace LMS.Controllers
             return View(db.Courses.ToList());
         }
 
+        //public ActionResult StudentCourse(int userId)
+        public ActionResult StudentCourse()
+        {
+            //var user = db.Users.Find(userId);
+            //var course = db.Courses.Find(user.CourseId);
+            var course = db.Courses.FirstOrDefault();
+            return View(course);
+        }
+
         // GET: Courses/Details/5
         public ActionResult Details(int? id)
         {
