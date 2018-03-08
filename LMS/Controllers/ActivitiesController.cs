@@ -36,6 +36,7 @@ namespace LMS.Controllers
         }
 
         // GET: Activities/Create
+        [Authorize(Roles = Roles.Teacher)]
         public ActionResult Create()
         {
             return View();
@@ -44,6 +45,7 @@ namespace LMS.Controllers
         // POST: Activities/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = Roles.Teacher)]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,ActivityType,Description,StartDate,DurationDays,EndDate,CreationTime,ActivityInfo")] Activity activity)
@@ -59,6 +61,7 @@ namespace LMS.Controllers
         }
 
         // GET: Activities/Edit/5
+        [Authorize(Roles = Roles.Teacher)]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -78,6 +81,7 @@ namespace LMS.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = Roles.Teacher)]
         public ActionResult Edit([Bind(Include = "Id,ActivityType,Description,StartDate,DurationDays,EndDate,CreationTime,ActivityInfo")] Activity activity)
         {
             if (ModelState.IsValid)
@@ -90,6 +94,7 @@ namespace LMS.Controllers
         }
 
         // GET: Activities/Delete/5
+        [Authorize(Roles = Roles.Teacher)]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -107,6 +112,7 @@ namespace LMS.Controllers
         // POST: Activities/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = Roles.Teacher)]
         public ActionResult DeleteConfirmed(int id)
         {
             Activity activity = db.Activities.Find(id);

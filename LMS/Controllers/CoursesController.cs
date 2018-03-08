@@ -45,6 +45,8 @@ namespace LMS.Controllers
         }
 
         // GET: Courses/Create
+
+        [Authorize(Roles = Roles.Teacher)]
         public ActionResult Create()
         {
             return View();
@@ -68,6 +70,7 @@ namespace LMS.Controllers
         }
 
         // GET: Courses/Edit/5
+        [Authorize(Roles = Roles.Teacher)]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -99,6 +102,7 @@ namespace LMS.Controllers
         }
 
         // GET: Courses/Delete/5
+        [Authorize(Roles = Roles.Teacher)]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -114,6 +118,7 @@ namespace LMS.Controllers
         }
 
         // POST: Courses/Delete/5
+        [Authorize(Roles = Roles.Teacher)]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

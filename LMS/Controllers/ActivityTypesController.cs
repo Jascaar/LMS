@@ -36,6 +36,7 @@ namespace LMS.Controllers
         }
 
         // GET: ActivityTypes/Create
+        [Authorize(Roles = Roles.Teacher)]
         public ActionResult Create()
         {
             return View();
@@ -46,6 +47,7 @@ namespace LMS.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = Roles.Teacher)]
         public ActionResult Create([Bind(Include = "Id,ActivityTypeName,CreationTime")] ActivityType activityType)
         {
             if (ModelState.IsValid)
@@ -59,6 +61,7 @@ namespace LMS.Controllers
         }
 
         // GET: ActivityTypes/Edit/5
+        [Authorize(Roles = Roles.Teacher)]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -78,6 +81,7 @@ namespace LMS.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = Roles.Teacher)]
         public ActionResult Edit([Bind(Include = "Id,ActivityTypeName,CreationTime")] ActivityType activityType)
         {
             if (ModelState.IsValid)
@@ -90,6 +94,7 @@ namespace LMS.Controllers
         }
 
         // GET: ActivityTypes/Delete/5
+        [Authorize(Roles = Roles.Teacher)]
         public ActionResult Delete(int? id)
         {
             if (id == null)
