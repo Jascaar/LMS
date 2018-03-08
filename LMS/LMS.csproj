@@ -199,41 +199,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201803061531309_InitialCreate.cs" />
-    <Compile Include="Migrations\201803061531309_InitialCreate.Designer.cs">
-      <DependentUpon>201803061531309_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803061549534_init.cs" />
-    <Compile Include="Migrations\201803061549534_init.Designer.cs">
-      <DependentUpon>201803061549534_init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803071354323_seed and roles.cs" />
-    <Compile Include="Migrations\201803071354323_seed and roles.Designer.cs">
-      <DependentUpon>201803071354323_seed and roles.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803071356521_new seed with the same roles.cs" />
-    <Compile Include="Migrations\201803071356521_new seed with the same roles.Designer.cs">
-      <DependentUpon>201803071356521_new seed with the same roles.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803071500276_working with useraccounts.cs" />
-    <Compile Include="Migrations\201803071500276_working with useraccounts.Designer.cs">
-      <DependentUpon>201803071500276_working with useraccounts.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803081016088_working seed.cs" />
-    <Compile Include="Migrations\201803081016088_working seed.Designer.cs">
-      <DependentUpon>201803081016088_working seed.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803081026322_even better seed.cs" />
-    <Compile Include="Migrations\201803081026322_even better seed.Designer.cs">
-      <DependentUpon>201803081026322_even better seed.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803081051148_IsActive kan vara nullable.cs" />
-    <Compile Include="Migrations\201803081051148_IsActive kan vara nullable.Designer.cs">
-      <DependentUpon>201803081051148_IsActive kan vara nullable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803081102539_UserName i seed.cs" />
-    <Compile Include="Migrations\201803081102539_UserName i seed.Designer.cs">
-      <DependentUpon>201803081102539_UserName i seed.cs</DependentUpon>
+    <Compile Include="Migrations\201803081424577_NewInit.cs" />
+    <Compile Include="Migrations\201803081424577_NewInit.Designer.cs">
+      <DependentUpon>201803081424577_NewInit.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -342,32 +310,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201803061531309_InitialCreate.resx">
-      <DependentUpon>201803061531309_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803061549534_init.resx">
-      <DependentUpon>201803061549534_init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803071354323_seed and roles.resx">
-      <DependentUpon>201803071354323_seed and roles.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803071356521_new seed with the same roles.resx">
-      <DependentUpon>201803071356521_new seed with the same roles.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803071500276_working with useraccounts.resx">
-      <DependentUpon>201803071500276_working with useraccounts.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803081016088_working seed.resx">
-      <DependentUpon>201803081016088_working seed.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803081026322_even better seed.resx">
-      <DependentUpon>201803081026322_even better seed.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803081051148_IsActive kan vara nullable.resx">
-      <DependentUpon>201803081051148_IsActive kan vara nullable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803081102539_UserName i seed.resx">
-      <DependentUpon>201803081102539_UserName i seed.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201803081424577_NewInit.resx">
+      <DependentUpon>201803081424577_NewInit.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

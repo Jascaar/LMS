@@ -66,12 +66,26 @@ namespace LMS.Models
     {
 
         public int UserId { get; set; }
+
+        [Required]
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
+
+        [Required]
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
+
+
         public string FullName { get { return FirstName + " " + LastName; } }
+
+
         public string NickName { get; set; }
         public bool IsActive { get; set; }
+
+        [StringLength(200, ErrorMessage = "Additional info can at most be 200 characters long")]
         public string AdditionalInfo { get; set; }
+
+        [StringLength(200, ErrorMessage = "Special info can at most be 200 characters long")]
         public string SpecialInfo { get; set; }
 
         public virtual Course Course_ { get; set; }

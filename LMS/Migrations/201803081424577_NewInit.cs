@@ -3,7 +3,7 @@ namespace LMS.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class NewInit : DbMigration
     {
         public override void Up()
         {
@@ -17,7 +17,6 @@ namespace LMS.Migrations
                         StartDate = c.DateTime(nullable: false),
                         DurationDays = c.Int(nullable: false),
                         EndDate = c.DateTime(nullable: false),
-                        CreationTime = c.DateTime(nullable: false),
                         ActivityInfo = c.String(),
                         ActivityType__Id = c.Int(),
                         Module_Id = c.Int(),
@@ -34,7 +33,6 @@ namespace LMS.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         ActivityTypeName = c.String(nullable: false, maxLength: 50),
-                        CreationTime = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -48,7 +46,6 @@ namespace LMS.Migrations
                         StartDate = c.DateTime(nullable: false),
                         DurationDays = c.Int(nullable: false),
                         EndDate = c.DateTime(nullable: false),
-                        CreationTime = c.DateTime(nullable: false),
                         ModuleInfo = c.String(),
                         Course_Id = c.Int(),
                     })
@@ -74,6 +71,12 @@ namespace LMS.Migrations
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
+                        FirstName = c.String(nullable: false),
+                        LastName = c.String(nullable: false),
+                        NickName = c.String(maxLength: 20),
+                        IsActive = c.Boolean(),
+                        AdditionalInfo = c.String(maxLength: 200),
+                        SpecialInfo = c.String(maxLength: 200),
                         Email = c.String(maxLength: 256),
                         EmailConfirmed = c.Boolean(nullable: false),
                         PasswordHash = c.String(),
@@ -85,12 +88,12 @@ namespace LMS.Migrations
                         LockoutEnabled = c.Boolean(nullable: false),
                         AccessFailedCount = c.Int(nullable: false),
                         UserName = c.String(nullable: false, maxLength: 256),
-                        Course_Id = c.Int(),
+                        Course__Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Courses", t => t.Course_Id)
+                .ForeignKey("dbo.Courses", t => t.Course__Id)
                 .Index(t => t.UserName, unique: true, name: "UserNameIndex")
-                .Index(t => t.Course_Id);
+                .Index(t => t.Course__Id);
             
             CreateTable(
                 "dbo.AspNetUserClaims",
@@ -146,9 +149,9 @@ namespace LMS.Migrations
         {
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
             DropForeignKey("dbo.Modules", "Course_Id", "dbo.Courses");
-            DropForeignKey("dbo.AspNetUsers", "Course_Id", "dbo.Courses");
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
+            DropForeignKey("dbo.AspNetUsers", "Course__Id", "dbo.Courses");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.Activities", "Module_Id", "dbo.Modules");
             DropForeignKey("dbo.Activities", "ActivityType__Id", "dbo.ActivityTypes");
@@ -157,7 +160,7 @@ namespace LMS.Migrations
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
-            DropIndex("dbo.AspNetUsers", new[] { "Course_Id" });
+            DropIndex("dbo.AspNetUsers", new[] { "Course__Id" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
             DropIndex("dbo.Modules", new[] { "Course_Id" });
             DropIndex("dbo.Activities", new[] { "Module_Id" });
