@@ -14,7 +14,7 @@ namespace LMS.Models
         [Display(Name = "Course Name")]
         public string CourseName { get; set; }
 
-        [StringLength(200, ErrorMessage = "The description can at most be 200 characters long")]
+        [StringLength(200, ErrorMessage = "The description can not be more than 200 characters long")]
         public string Description { get; set; }
 
         [Required]
